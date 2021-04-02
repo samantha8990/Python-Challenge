@@ -17,10 +17,8 @@ with open(pybank_path) as csv_file:
         votes.append(row[0])
         candidates.append(row[2])
 
-
-
        
-    #candidates and votes they got
+    #candidates and votes
     Khan=int(candidates.count("Khan"))
     Correy=int(candidates.count("Correy"))
     Li=int(candidates.count("Li"))
@@ -28,10 +26,11 @@ with open(pybank_path) as csv_file:
 
     #% of total vote for each canidate
     allvotes=(len(votes))
-    Khan_per=(Khan/allvotes)*100
-    Correy_per=(Correy/allvotes)*100
-    Li_per=(Li/allvotes)*100
-    OTooley_per=(OTooley/allvotes)*100
+    
+    Khan_per=round(int(Khan)/(allvotes),3)
+    Correy_per=round(int(Correy)/(allvotes),3)
+    Li_per=round(int(Li)/(allvotes),3)
+    OTooley_per=round(int(OTooley)/(allvotes),3)
 
 
     #find winner
@@ -47,6 +46,7 @@ with open(pybank_path) as csv_file:
 print("Election Results")
 print("---------------------------")
 print("Total Votes:", len(votes))
+print(f'Khanp: {Khan_per:.3%}, {Khan:.3%}.')
 print("Khan:", (Khan_per), (Khan))
 print("Correy:", (Correy_per), (Correy))
 print("Li:", (Li_per), (Li))
