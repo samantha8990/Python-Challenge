@@ -46,11 +46,10 @@ with open(pybank_path) as csv_file:
 print("Election Results")
 print("---------------------------")
 print("Total Votes:", len(votes))
-print(f'Khanp: {Khan_per:.3%}, {Khan:.3%}.')
-print("Khan:", (Khan_per), (Khan))
-print("Correy:", (Correy_per), (Correy))
-print("Li:", (Li_per), (Li))
-print("O' Tooley:", (OTooley_per), (OTooley))
+print(f'Khanp: {Khan_per:.3%}, ({Khan})')
+print(f'Correy: {Correy_per:.3%}, ({Correy})')
+print(f'Li: {Li_per:.3%}, ({Li})')
+print(f'O Tooley: {OTooley_per:.3%}, ({OTooley})')
 print("Winner:", (Winner))
 
     
