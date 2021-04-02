@@ -7,17 +7,18 @@ pybank_path= os.path.join('PyPoll','Resources','pypoll.csv')
 #open file
 with open(pybank_path) as csv_file:
     csv_reader=csv.reader(csv_file, delimiter=',')
-    csv_reader=next(csv_file)
+    header=next(csv_file)
 
 #set variables
- #votes= []
+    votes= []
  #candidates=[]
  #candidatevotes=[]
 
-    total_vote=0
+    #total_vote=0
 
-    for column in csv_reader:
-        total_vote += 1
+    for row in csv_reader:
+        votes.append(row[0])
+        #total_vote += 1
        
     #candidates and votes they got
     #Khan=int(candidates.count("Khan"))
@@ -34,6 +35,6 @@ with open(pybank_path) as csv_file:
 
     print("Election Results")
     print("---------------------------")
-    print("Total Votes:", total_vote)
+    print("Total Votes:", sum(votes)
     #print("Khan:", khan_per Khan)
     

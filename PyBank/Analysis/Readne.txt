@@ -49,8 +49,6 @@ with open(pybank_path) as csv_file:
     print("Total Months:", len(months))
     print("Total:", sum(profit))
     print("Average Change:", sum(str(changes)/len(changes))
+    
     print("Greatest Increase in Profits:", max_profit)
     print("Greatest Decrease in Profits:", min_profit)
-
-
-
