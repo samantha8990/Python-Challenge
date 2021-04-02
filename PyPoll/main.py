@@ -12,9 +12,7 @@ with open(pybank_path) as csv_file:
 #set variables
     votes= []
     candidates=[]
-    #candidatevotes=0
-
-
+  
     for row in csv_reader:
         votes.append(row[0])
         candidates.append(row[2])
@@ -35,6 +33,8 @@ with open(pybank_path) as csv_file:
     Li_per=(Li/allvotes)*100
     OTooley_per=(OTooley/allvotes)*100
 
+
+    #find winner
     if Khan > Correy > Li > OTooley:
         Winner="Khan"
     elif Correy > Khan > Li > OTooley:
