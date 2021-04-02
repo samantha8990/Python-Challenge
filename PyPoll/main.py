@@ -11,30 +11,46 @@ with open(pybank_path) as csv_file:
 
 #set variables
     votes= []
- #candidates=[]
- #candidatevotes=[]
+    candidates=[]
+    #candidatevotes=0
 
-    #total_vote=0
 
     for row in csv_reader:
         votes.append(row[0])
-        #total_vote += 1
+        candidates.append(row[2])
+
+
+
        
     #candidates and votes they got
-    #Khan=int(candidates.count("Khan"))
-    #Correy=int(candidates.count("Correy"))
-    #Li=int(candidates.count("Li"))
-    #O'Tooley=int(candidates.count("O'Tooley"))
+    Khan=int(candidates.count("Khan"))
+    Correy=int(candidates.count("Correy"))
+    Li=int(candidates.count("Li"))
+    OTooley=int(candidates.count("O'Tooley"))
 
     #% of total vote for each canidate
-    #Khan_per=(Khan/total_vote)*100
-    #Correy_per=(Correy/total_vote)*100
-    #Li_per=(Li/total_vote)*100
-    #O'Tooley_per=(O'Tooley/total_vote)*100
+    allvotes=(len(votes))
+    Khan_per=(Khan/allvotes)*100
+    Correy_per=(Correy/allvotes)*100
+    Li_per=(Li/allvotes)*100
+    OTooley_per=(OTooley/allvotes)*100
 
+    if Khan > Correy > Li > OTooley:
+        Winner="Khan"
+    elif Correy > Khan > Li > OTooley:
+        Winner= "Correy"
+    elif Li > Khan > Correy > OTooley:
+        Winner="Li"
+    elif OTooley > Khan > Correy > Li:
+        Winner="O'Tooley"
 
-    print("Election Results")
-    print("---------------------------")
-    print("Total Votes:", sum(votes)
-    #print("Khan:", khan_per Khan)
+print("Election Results")
+print("---------------------------")
+print("Total Votes:", len(votes))
+print("Khan:", (Khan_per), (Khan))
+print("Correy:", (Correy_per), (Correy))
+print("Li:", (Li_per), (Li))
+print("O' Tooley:", (OTooley_per), (OTooley))
+print("Winner:", (Winner))
+
     
